@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="common" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <property name="module.name" value="${ant.project.name}"/>
+    <property name="junit.haltonfailure" value="true"/>
+
+    <target name="init">
+        <mkdir dir="src/main/java/.classes"/>
+        <mkdir dir="src/test/java/.classes"/>
+        <mkdir dir=".build"/>
+    </target>
+
+    <target name="compile" depends="init, resolve-compile">
+        <javac srcdir="src/main/java"
+            classpathref="compile.path"
+            destdir="src/main/java/.classes">
+        </javac>
+    </target>
+
+    <target name="package" depends="compile">
+        <jar destfile=".build/${module.name}.jar" basedir="src/main/java/.classes"/>
+    </target>
+
+    <target name="publish" depends="package, test">
+        <ivy:publish
+            resolver="local"
+            overwrite="true">
+
+            <artifacts pattern=".build/[artifact].[ext]"/>
+        </ivy:publish>
+    </target>
+
+    <target name="test-compile" depends="package, resolve-test">
+        <javac srcdir="src/test/java"
+            destdir="src/test/java/.classes">
+
+            <classpath>
+                <path refid="compile.path"/>
+                <path refid="test.path"/>
+                <fileset dir=".build"/>
+            </classpath>
+
+        </javac>
+    </target>
+
+    <target name="test" depends="test-compile">
+        <junit>
+            <classpath>
+                <fileset dir=".build"/>
+                <path refid="test.path"/>
+                <pathelement location="src/test/java/.classes"/>
+                <pathelement location="src/test/resources"/>
+            </classpath>
+
+            <batchtest haltonfailure="${junit.haltonfailure}">
+                <fileset dir="src/test/java/.classes" includes="**/*Test.class"/>
+            </batchtest>
+
+            <formatter type="brief" usefile="false"/>
+        </junit>
+    </target>
+
+    <target name="clean" depends="init">
+        <delete dir="src/main/java/.classes"/>
+        <delete dir="src/test/java/.classes"/>
+        <delete dir=".build"/>
+    </target>
+
+    <target name="resolve-compile">
+        <ivy:cachepath pathid="compile.path" conf="compile"/>
+    </target>
+
+    <target name="resolve-test">
+        <ivy:cachepath pathid="test.path" conf="test"/>
+    </target>
+
+</project>

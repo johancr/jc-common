@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jc:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:jc="http://johan.cronsioe.se/SomeSchema"
+         xsi:schemaLocation="http://johan.cronsioe.se/SomeSchema classpath:xml/simple.xsd"
+        >
+
+    <jc:data>text</jc:data>
+
+    <other-stuff xmlns="anotherSchema">
+        some text
+    </other-stuff>
+
+</jc:root>

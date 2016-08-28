@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ivy-module version="2.0">
+    <info organisation="se.cronsioe.johan" module="jc-base-bootstrap" revision="1.0.0"/>
+
+    <configurations>
+        <conf name="compile"/>
+        <conf name="test"/>
+    </configurations>
+
+    <dependencies>
+        <dependency org="se.cronsioe.johan" name="jc-test-lang" rev="1.0.0" changing="true" conf="test->compile"/>
+
+        <dependency org="com.google.inject" name="guice" rev="3.0" conf="compile,test->*"/>
+        <dependency org="junit" name="junit" rev="4.12" conf="test->*"/>
+        <dependency org="info.cukes" name="cucumber-junit" rev="1.2.4" conf="test->*"/>
+        <dependency org="info.cukes" name="cucumber-java" rev="1.2.4" conf="test->*"/>
+    </dependencies>
+
+</ivy-module>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project name="jc-common" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <target name="compile" depends="buildlist">
+        <subant target="compile" buildpathref="build.path"/>
+    </target>
+
+    <target name="test" depends="buildlist">
+        <subant target="test" buildpathref="build.path"/>
+    </target>
+
+    <target name="publish" depends="buildlist">
+        <subant target="publish" buildpathref="build.path"/>
+    </target>
+
+    <target name="clean" depends="buildlist">
+        <subant target="clean" buildpathref="build.path"/>
+    </target>
+
+    <target name="buildlist">
+        <ivy:buildlist reference="build.path" excluderoot="true">
+            <fileset dir="." includes="jc-base/*/build.xml, jc-test/*/build.xml"/>
+        </ivy:buildlist>
+    </target>
+</project>

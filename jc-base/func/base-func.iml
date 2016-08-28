@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="IvyIDEA" name="IvyIDEA">
+      <configuration ivyFile="$MODULE_DIR$/ivy.xml" useProjectSettings="true" useCustomIvySettings="true" ivySettingsFile="" onlyResolveSelectedConfigs="false">
+        <propertiesSettings>
+          <propertiesFiles includeProjectLevelPropertiesFiles="true" />
+        </propertiesSettings>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/.classes" />
+      <excludeFolder url="file://$MODULE_DIR$/src/test/java/.classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="IvyIDEA">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/jars/junit-4.12.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/jars/cucumber-junit-1.2.4.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-core/jars/cucumber-core-1.2.4.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-html/jars/cucumber-html-0.2.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-jvm-deps/jars/cucumber-jvm-deps-1.0.5.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin/bundles/gherkin-2.12.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin-jvm-deps/jars/gherkin-jvm-deps-1.0.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/jars/cucumber-java-1.2.4.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/javadocs/junit-4.12-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/javadocs/hamcrest-core-1.3-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/javadocs/cucumber-junit-1.2.4-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-core/javadocs/cucumber-core-1.2.4-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-jvm-deps/javadocs/cucumber-jvm-deps-1.0.5-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin/javadocs/gherkin-2.12.2-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin-jvm-deps/javadocs/gherkin-jvm-deps-1.0.2-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/javadocs/cucumber-java-1.2.4-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/sources/junit-4.12-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/sources/hamcrest-core-1.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/sources/cucumber-junit-1.2.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-core/sources/cucumber-core-1.2.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-html/sources/cucumber-html-0.2.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-jvm-deps/sources/cucumber-jvm-deps-1.0.5-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin/sources/gherkin-2.12.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/gherkin-jvm-deps/sources/gherkin-jvm-deps-1.0.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/sources/cucumber-java-1.2.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
