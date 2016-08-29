@@ -1,7 +1,9 @@
 package se.cronsioe.johan.test.lang;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.ServiceLoader;
 
@@ -11,6 +13,9 @@ import static org.junit.Assert.assertThat;
 public class MockClassLoaderExecutorTest {
 
     private MockClassLoaderExecutor executor;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() {
@@ -30,6 +35,25 @@ public class MockClassLoaderExecutorTest {
             public void run() {
                 ServiceLoader<Foo> serviceLoader = ServiceLoader.load(Foo.class);
                 assertThat(serviceLoader.iterator().next().bar(), is("bar"));
+            }
+        });
+    }
+
+    @Test
+    public void exceptionsArePropagated()
+    {
+        thrown.expect(RuntimeException.class);
+        thrown.expectMessage("exception from task");
+
+        execute(new MockClassLoaderTask() {
+            @Override
+            public void configure(MockClassLoader mockClassLoader) {
+
+            }
+
+            @Override
+            public void run() {
+                throw new RuntimeException("exception from task");
             }
         });
     }

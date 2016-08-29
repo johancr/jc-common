@@ -13,10 +13,6 @@ public class MockClassLoaderExecutor {
             Thread.currentThread().setContextClassLoader(mockClassLoader);
             task.run();
         }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
         finally
         {
             Thread.currentThread().setContextClassLoader(current);
