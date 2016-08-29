@@ -21,7 +21,7 @@
 
         <dependency org="info.cukes" name="cucumber-junit" rev="1.2.4" conf="test->*"/>
         <dependency org="info.cukes" name="cucumber-java" rev="1.2.4" conf="test->*"/>
-        <dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa" rev="2.6.3" conf="test->*"/>
+        <dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa" rev="2.5.2" conf="test->*"/>
         <dependency org="com.h2database" name="h2" rev="1.4.191" conf="test->*"/>
         <dependency org="org.apache.openejb" name="openejb-core" rev="4.7.4" conf="test->*"/>
     </dependencies>

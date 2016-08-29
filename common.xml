@@ -31,7 +31,11 @@
     </target>
 
     <target name="test-compile" depends="package, resolve-test">
-        <javac srcdir="src/test/java"
+        <javac 
+            source="1.6"
+            target="1.6"
+            bootclasspath="$JAVA_HOME/jre/lib/rt.jar"
+            srcdir="src/test/java"
             destdir="src/test/java/.classes">
 
             <classpath>
@@ -44,7 +48,10 @@
     </target>
 
     <target name="test" depends="test-compile">
-        <junit>
+        <junit
+            fork="yes"
+            forkMode="perBatch"
+            >
             <classpath>
                 <fileset dir=".build"/>
                 <path refid="test.path"/>

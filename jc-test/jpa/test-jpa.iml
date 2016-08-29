@@ -32,13 +32,7 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/jars/cglib-2.2.1-v20090111.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/jars/guice-multibindings-3.0.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa/jars/org.eclipse.persistence.jpa-2.6.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/jars/javax.persistence-2.1.1.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.asm/jars/org.eclipse.persistence.asm-2.6.3.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.antlr/jars/org.eclipse.persistence.antlr-2.6.3.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish/javax.json/bundles/javax.json-1.0.4.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/jars/org.eclipse.persistence.jpa.jpql-2.6.3.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.core/jars/org.eclipse.persistence.core-2.6.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.h2database/h2/jars/h2-1.4.191.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/jars/cucumber-junit-1.2.4.jar!/" />
@@ -112,6 +106,11 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.beanshell/bsh/jars/bsh-2.0b4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.beust/jcommander/jars/jcommander-1.27.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/wsdl4j/wsdl4j/jars/wsdl4j-1.6.3.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa/jars/org.eclipse.persistence.jpa-2.5.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.asm/jars/org.eclipse.persistence.asm-2.5.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.antlr/jars/org.eclipse.persistence.antlr-2.5.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/jars/org.eclipse.persistence.jpa.jpql-2.5.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.core/jars/org.eclipse.persistence.core-2.5.2.jar!/" />
         </CLASSES>
         <JAVADOC>
           <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/javadocs/junit-4.12-javadoc.jar!/" />
@@ -120,7 +119,6 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/javax.inject/javax.inject/javadocs/javax.inject-1-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/javadocs/cglib-2.2.1-v20090111-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/javadocs/guice-multibindings-3.0-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish/javax.json/javadocs/javax.json-1.0.4-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.h2database/h2/javadocs/h2-1.4.191-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/javadocs/geronimo-jta_1.1_spec-1.1.1-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/javadocs/cucumber-junit-1.2.4-javadoc.jar!/" />
@@ -197,13 +195,7 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/sources/cglib-2.2.1-v20090111-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/sources/asm-3.1-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/sources/guice-multibindings-3.0-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa/sources/org.eclipse.persistence.jpa-2.6.3-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/sources/javax.persistence-2.1.1-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.asm/sources/org.eclipse.persistence.asm-2.6.3-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.antlr/sources/org.eclipse.persistence.antlr-2.6.3-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.glassfish/javax.json/sources/javax.json-1.0.4-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/sources/org.eclipse.persistence.jpa.jpql-2.6.3-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.core/sources/org.eclipse.persistence.core-2.6.3-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.h2database/h2/sources/h2-1.4.191-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/sources/geronimo-jta_1.1_spec-1.1.1-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-junit/sources/cucumber-junit-1.2.4-sources.jar!/" />
@@ -276,6 +268,11 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/org.testng/testng/sources/testng-6.8.8-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/com.beust/jcommander/sources/jcommander-1.27-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/wsdl4j/wsdl4j/sources/wsdl4j-1.6.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa/sources/org.eclipse.persistence.jpa-2.5.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.asm/sources/org.eclipse.persistence.asm-2.5.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.antlr/sources/org.eclipse.persistence.antlr-2.5.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/sources/org.eclipse.persistence.jpa.jpql-2.5.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.core/sources/org.eclipse.persistence.core-2.5.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
