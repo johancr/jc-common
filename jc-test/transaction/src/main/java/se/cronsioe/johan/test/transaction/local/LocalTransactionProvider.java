@@ -17,7 +17,7 @@ public class LocalTransactionProvider implements Provider<Transaction> {
     @Override
     public Transaction get() {
 
-        Transaction transaction = transactionManager.get();
+        Transaction transaction = transactionManager.getTransaction();
 
         if (transaction != null)
         {

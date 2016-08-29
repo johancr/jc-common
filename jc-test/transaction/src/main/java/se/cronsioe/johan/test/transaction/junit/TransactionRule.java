@@ -32,7 +32,7 @@ public class TransactionRule implements TestRule {
 
                 if (description.getAnnotation(Transactional.class) != null)
                 {
-                    if (localTransactionManager.get().isActive())
+                    if (localTransactionManager.getTransaction().isActive())
                     {
                         localTransactionManager.commit();
                     }

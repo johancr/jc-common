@@ -26,7 +26,7 @@ public class LocalTransactionManager {
         transaction = create();
     }
 
-    private Transaction create() {
+    private static Transaction create() {
         return new Transaction() {
 
             private final Collection<TransactionListener> listeners = new ArrayList<TransactionListener>();
@@ -73,7 +73,7 @@ public class LocalTransactionManager {
     }
 
     public void commit() {
-        Transaction transaction = get();
+        Transaction transaction = getTransaction();
 
         if (transaction.isActive())
         {
@@ -81,11 +81,11 @@ public class LocalTransactionManager {
         }
         else
         {
-            throw new TransactionException("No active transactions");
+            throw new TransactionException("Can not commit transaction which is not active");
         }
     }
 
-    public Transaction get() {
+    public Transaction getTransaction() {
 
         if (transaction != null)
         {
