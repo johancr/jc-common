@@ -11,13 +11,13 @@ import java.util.ServiceConfigurationError;
 
 public class Bootstrap {
 
-    private final Provider<Collection<Module>> moduleProvider;
+    private final Provider<Collection<Module>> modulesProvider;
     private final ModuleMerger moduleMerger;
 
     private Injector injector;
 
-    public Bootstrap(Provider<Collection<Module>> moduleProvider, ModuleMerger moduleMerger) {
-        this.moduleProvider = moduleProvider;
+    public Bootstrap(Provider<Collection<Module>> modulesProvider, ModuleMerger moduleMerger) {
+        this.modulesProvider = modulesProvider;
         this.moduleMerger = moduleMerger;
     }
 
@@ -47,7 +47,7 @@ public class Bootstrap {
     }
 
     private Module loadModules() {
-        Collection<Module> modules = moduleProvider.get();
+        Collection<Module> modules = modulesProvider.get();
         return moduleMerger.merge(modules);
     }
 }
