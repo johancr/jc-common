@@ -19,8 +19,6 @@ public class EntityManagerProvider implements Provider<EntityManager> {
     private final Provider<EntityManagerFactory> entityManagerFactoryProvider;
     private final Provider<Transaction> transactionProvider;
 
-    private EntityManager proxy;
-
     @Inject
     public EntityManagerProvider(Provider<EntityManagerFactory> entityManagerFactoryProvider,
                                  Provider<Transaction> transactionProvider) {
@@ -38,24 +36,21 @@ public class EntityManagerProvider implements Provider<EntityManager> {
             entityManager = entityManagerFactory().createEntityManager();
 
             joinTransaction(entityManager);
-
-            proxy = (EntityManager) Proxy.newProxyInstance(getClass().getClassLoader(), entityManager.getClass().getInterfaces(), new InvocationHandler() {
-                @Override
-                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
-                    EntityManager entityManager = transaction().lookup(EntityManager.class);
-
-                    if (nullOrClosed(entityManager))
-                    {
-                        entityManager = entityManagerFactory().createEntityManager();
-                        joinTransaction(entityManager);
-                    }
-
-                    return method.invoke(entityManager, args);
-                }
-            });
         }
-        return proxy;
+
+        return createProxy(entityManager);
+    }
+
+    private Transaction transaction() {
+        return transactionProvider.get();
+    }
+
+    private boolean nullOrClosed(EntityManager entityManager) {
+        return entityManager == null || !entityManager.isOpen();
+    }
+
+    private EntityManagerFactory entityManagerFactory() {
+        return entityManagerFactoryProvider.get();
     }
 
     private void joinTransaction(final EntityManager entityManager) {
@@ -81,16 +76,22 @@ public class EntityManagerProvider implements Provider<EntityManager> {
         transaction().bind(EntityManager.class, entityManager);
     }
 
-    private Transaction transaction() {
-        return transactionProvider.get();
-    }
+    private EntityManager createProxy(EntityManager entityManager) {
+        return (EntityManager) Proxy.newProxyInstance(getClass().getClassLoader(), entityManager.getClass().getInterfaces(), new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-    private boolean nullOrClosed(EntityManager entityManager) {
-        return entityManager == null || !entityManager.isOpen();
-    }
+                EntityManager entityManager = transaction().lookup(EntityManager.class);
 
-    private EntityManagerFactory entityManagerFactory() {
-        return entityManagerFactoryProvider.get();
+                if (nullOrClosed(entityManager))
+                {
+                    entityManager = entityManagerFactory().createEntityManager();
+                    joinTransaction(entityManager);
+                }
+
+                return method.invoke(entityManager, args);
+            }
+        });
     }
 
 }
