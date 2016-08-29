@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.junit.runners.model.InitializationError;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
-import se.cronsioe.johan.test.junit.GuiceClassRunner;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.junit.GuiceModules;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
@@ -25,17 +25,17 @@ public class JPATestModuleTest {
 
     @Test
     public void closeDatabaseAfterEachTest() throws InitializationError {
-        GuiceClassRunner guiceClassRunner = new GuiceClassRunner(JPATest.class);
+        GuiceRunner guiceRunner = new GuiceRunner(JPATest.class);
         JUnitCore junitCore = new JUnitCore();
 
-        Result result = junitCore.run(guiceClassRunner);
+        Result result = junitCore.run(guiceRunner);
 
         assertThat(result.wasSuccessful(), is(true));
     }
 
     @GuiceModules(JPATestModule.class)
     @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-    @RunWith(GuiceClassRunner.class)
+    @RunWith(GuiceRunner.class)
     public static class JPATest {
 
         @Inject

@@ -5,7 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
-import se.cronsioe.johan.test.junit.GuiceClassRunner;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.junit.GuiceModules;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertSame;
 
-@RunWith(GuiceClassRunner.class)
+@RunWith(GuiceRunner.class)
 @GuiceModules(JPATestModule.class)
 public class EntityManagerProviderTest {
 

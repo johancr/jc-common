@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
-public class GuiceClassRunner extends BlockJUnit4ClassRunner {
+public class GuiceRunner extends BlockJUnit4ClassRunner {
 
     private final Injector injector;
 
-    public GuiceClassRunner(Class<?> klass) throws InitializationError {
+    public GuiceRunner(Class<?> klass) throws InitializationError {
         super(klass);
         this.injector = createInjector(klass);
     }

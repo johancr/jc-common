@@ -13,40 +13,40 @@ import org.junit.runners.model.InitializationError;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class GuiceClassRunnerTest {
+public class GuiceRunnerTest {
 
     @Test
     public void injectsUsingImplementedBy() throws InitializationError {
 
-        GuiceClassRunner guiceClassRunner = new GuiceClassRunner(TestsUsingImplementedBy.class);
+        GuiceRunner guiceRunner = new GuiceRunner(TestsUsingImplementedBy.class);
         JUnitCore junitCore = new JUnitCore();
 
-        Result result = junitCore.run(guiceClassRunner);
+        Result result = junitCore.run(guiceRunner);
 
         assertThat(result.wasSuccessful(), is(true));
     }
 
     @Test
     public void injectUsingModulesInAnnotation() throws InitializationError {
-        GuiceClassRunner guiceClassRunner = new GuiceClassRunner(TestsUsingAnnotation.class);
+        GuiceRunner guiceRunner = new GuiceRunner(TestsUsingAnnotation.class);
         JUnitCore junitCore = new JUnitCore();
 
-        Result result = junitCore.run(guiceClassRunner);
+        Result result = junitCore.run(guiceRunner);
 
         assertThat(result.wasSuccessful(), is(true));
     }
 
     @Test
     public void injectBeforeBefore() throws InitializationError {
-        GuiceClassRunner guiceClassRunner = new GuiceClassRunner(TestsInjectBeforeBefore.class);
+        GuiceRunner guiceRunner = new GuiceRunner(TestsInjectBeforeBefore.class);
         JUnitCore junitCore = new JUnitCore();
 
-        Result result = junitCore.run(guiceClassRunner);
+        Result result = junitCore.run(guiceRunner);
 
         assertThat(result.wasSuccessful(), is(true));
     }
 
-    @RunWith(GuiceClassRunner.class)
+    @RunWith(GuiceRunner.class)
     public static class TestsUsingImplementedBy {
 
         @Inject
@@ -70,7 +70,7 @@ public class GuiceClassRunnerTest {
         }
     }
 
-    @RunWith(GuiceClassRunner.class)
+    @RunWith(GuiceRunner.class)
     @GuiceModules({TestsUsingAnnotation.Module.class})
     public static class TestsUsingAnnotation {
         @Inject
@@ -100,7 +100,7 @@ public class GuiceClassRunnerTest {
         }
     }
 
-    @RunWith(GuiceClassRunner.class)
+    @RunWith(GuiceRunner.class)
     public static class TestsInjectBeforeBefore {
         @Inject
         private Foo foo;
