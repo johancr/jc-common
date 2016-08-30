@@ -41,7 +41,7 @@ public class GuiceRunner extends BlockJUnit4ClassRunner {
                 }
                 catch (Exception ex)
                 {
-                    throw new RuntimeException(ex);
+                    throw new IllegalStateException("Could not instantiate guice modules: " + ex, ex);
                 }
             }
         }

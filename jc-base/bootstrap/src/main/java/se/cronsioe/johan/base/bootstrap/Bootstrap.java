@@ -42,7 +42,7 @@ public class Bootstrap {
         }
         catch (ServiceConfigurationError ex)
         {
-            throw new RuntimeException("Could not locate module\n" + ex, ex);
+            throw new IllegalStateException("Could not create injector: " + ex, ex);
         }
     }
 

@@ -27,7 +27,7 @@ public class InitialContextProvider implements Provider<Context> {
                 }
                 catch (NamingException ex)
                 {
-                    throw new TransactionException("Could not get initial context", ex);
+                    throw new TransactionException("Could not get initial context: " + ex, ex);
                 }
             }
         };

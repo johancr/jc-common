@@ -40,7 +40,7 @@ public class MockClassLoader extends ClassLoader {
                 }
                 catch (MalformedURLException ex)
                 {
-                    throw new RuntimeException(ex);
+                    throw new IllegalStateException("Could not create url for resource:" + ex, ex);
                 }
             }
         }
@@ -62,7 +62,7 @@ public class MockClassLoader extends ClassLoader {
                 }
                 catch (MalformedURLException ex)
                 {
-                    throw new RuntimeException(ex);
+                    throw new IllegalStateException("Could not create url for resource:" + ex, ex);
                 }
             }
         }

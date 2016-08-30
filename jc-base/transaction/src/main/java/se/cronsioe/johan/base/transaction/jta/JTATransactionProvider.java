@@ -44,7 +44,7 @@ public class JTATransactionProvider implements Provider<Transaction> {
                     }
                     catch (Exception ex)
                     {
-                        throw new TransactionException("Could not add transaction listener", ex);
+                        throw new TransactionException("Could not add transaction listener: " + ex, ex);
                     }
                 }
 
@@ -61,7 +61,7 @@ public class JTATransactionProvider implements Provider<Transaction> {
                     }
                     catch (Exception ex)
                     {
-                        throw new TransactionException("Could not check transaction status", ex);
+                        throw new TransactionException("Could not check transaction status:" + ex, ex);
                     }
                 }
 
@@ -79,7 +79,7 @@ public class JTATransactionProvider implements Provider<Transaction> {
         }
         catch (Exception ex)
         {
-            throw new TransactionException("Could not get transaction", ex);
+            throw new TransactionException("Could not get transaction: " + ex, ex);
         }
     }
 

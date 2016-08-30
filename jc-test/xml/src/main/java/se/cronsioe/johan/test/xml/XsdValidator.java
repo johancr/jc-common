@@ -72,7 +72,7 @@ public class XsdValidator {
                         }
                         catch (NullPointerException ex)
                         {
-                            throw new RuntimeException("Could not load xsd at: " + systemId + "\n" + ex, ex);
+                            throw new RuntimeException("Could not load xsd at: " + systemId + ": " + ex, ex);
                         }
                     }
                 }).openStream());

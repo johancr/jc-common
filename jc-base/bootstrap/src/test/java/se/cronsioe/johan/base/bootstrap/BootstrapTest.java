@@ -90,8 +90,8 @@ public class BootstrapTest {
             @Override
             public void run() {
 
-                thrown.expect(RuntimeException.class);
-                thrown.expectMessage("Could not locate module");
+                thrown.expect(IllegalStateException.class);
+                thrown.expectMessage("Could not create injector");
 
                 new Bootstrap(new ModuleProvider(), new OverridingModuleMerger()).getInstance(Object.class);
             }

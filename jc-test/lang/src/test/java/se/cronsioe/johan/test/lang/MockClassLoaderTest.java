@@ -92,7 +92,7 @@ public class MockClassLoaderTest {
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (IOException ex)
                 {
                     throw new RuntimeException(ex);
                 }

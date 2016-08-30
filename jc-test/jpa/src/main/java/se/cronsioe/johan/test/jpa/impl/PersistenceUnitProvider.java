@@ -32,7 +32,7 @@ public class PersistenceUnitProvider implements Provider<String> {
         }
         catch (Exception ex)
         {
-            throw new RuntimeException(ex);
+            throw new IllegalStateException("Could not find persistence unit: " + ex, ex);
         }
     }
 }
