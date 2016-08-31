@@ -57,26 +57,52 @@ public class GuiceRunner extends BlockJUnit4ClassRunner {
 
     @Override
     protected Statement withBefores(FrameworkMethod method, Object target, final Statement statement) {
-        final Set<Statement> statements = injector.getInstance(new Key<Set<Statement>>() {
+        final Set<BeforeAndAfterTask> tasks = injector.getInstance(new Key<Set<BeforeAndAfterTask>>() {
         });
-        final Statement befores = super.withBefores(method, target, statement);
 
-        return new Statement() {
+        return super.withBefores(method, target, new Statement() {
+
             @Override
             public void evaluate() throws Throwable {
-                for (Statement statement : statements)
-                {
-                    statement.evaluate();
-                }
-                befores.evaluate();
+                runBeforeTasks(tasks);
+                statement.evaluate();
             }
-        };
+
+            private void runBeforeTasks(Set<BeforeAndAfterTask> tasks) {
+                for (BeforeAndAfterTask task : tasks)
+                {
+                    task.before();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected Statement withAfters(FrameworkMethod method, Object target, final Statement statement) {
+        final Set<BeforeAndAfterTask> tasks = injector.getInstance(new Key<Set<BeforeAndAfterTask>>() {
+        });
+
+        return super.withAfters(method, target, new Statement() {
+
+            @Override
+            public void evaluate() throws Throwable {
+                statement.evaluate();
+                runAfterTasks(tasks);
+            }
+
+            private void runAfterTasks(Set<BeforeAndAfterTask> tasks) {
+                for (BeforeAndAfterTask task : tasks)
+                {
+                    task.after();
+                }
+            }
+        });
     }
 
     private static class DefaultBindingsModule extends AbstractModule {
         @Override
         protected void configure() {
-            Multibinder.newSetBinder(binder(), Statement.class);
+            Multibinder.newSetBinder(binder(), BeforeAndAfterTask.class);
         }
     }
 }

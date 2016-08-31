@@ -3,6 +3,8 @@ package se.cronsioe.johan.test.junit;
 import com.google.inject.AbstractModule;
 import com.google.inject.ImplementedBy;
 import com.google.inject.Inject;
+import com.google.inject.multibindings.Multibinder;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
@@ -39,6 +41,16 @@ public class GuiceRunnerTest {
     @Test
     public void injectBeforeBefore() throws InitializationError {
         GuiceRunner guiceRunner = new GuiceRunner(TestsInjectBeforeBefore.class);
+        JUnitCore junitCore = new JUnitCore();
+
+        Result result = junitCore.run(guiceRunner);
+
+        assertThat(result.wasSuccessful(), is(true));
+    }
+
+    @Test
+    public void beforeAndAfterTasksAreRunBeforeAndAfter() throws InitializationError {
+        GuiceRunner guiceRunner = new GuiceRunner(TestsBeforeAndAfterTask.class);
         JUnitCore junitCore = new JUnitCore();
 
         Result result = junitCore.run(guiceRunner);
@@ -123,6 +135,46 @@ public class GuiceRunnerTest {
             @Override
             public String foo() {
                 return "foo";
+            }
+        }
+    }
+
+    @RunWith(GuiceRunner.class)
+    @GuiceModules(TestsBeforeAndAfterTask.Module.class)
+    public static class TestsBeforeAndAfterTask {
+
+        private static String testValue = "not set";
+
+        @Before
+        public void setUp() {
+            assertThat(testValue, is("not set"));
+        }
+
+        @After
+        public void tearDown() {
+            assertThat(testValue, is("set by after"));
+        }
+
+        @Test
+        public void beforeTaskIsRun() {
+            assertThat(testValue, is("set by before"));
+        }
+
+        public static class Module extends AbstractModule {
+            @Override
+            protected void configure() {
+                Multibinder<BeforeAndAfterTask> tasks = Multibinder.newSetBinder(binder(), BeforeAndAfterTask.class);
+                tasks.addBinding().toInstance(new BeforeAndAfterTask() {
+                    @Override
+                    public void before() {
+                        testValue = "set by before";
+                    }
+
+                    @Override
+                    public void after() {
+                        testValue = "set by after";
+                    }
+                });
             }
         }
     }

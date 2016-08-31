@@ -4,9 +4,9 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.multibindings.Multibinder;
-import org.junit.runners.model.Statement;
 import se.cronsioe.johan.base.jpa.impl.EntityManagerProvider;
 import se.cronsioe.johan.test.jpa.impl.EntityManagerFactoryProvider;
+import se.cronsioe.johan.test.junit.BeforeAndAfterTask;
 import se.cronsioe.johan.test.transaction.guice.LocalTransactionModule;
 
 import javax.persistence.EntityManager;
@@ -21,17 +21,22 @@ public class JPATestModule extends AbstractModule {
         bind(EntityManager.class).toProvider(EntityManagerProvider.class);
         bind(EntityManagerFactory.class).toProvider(EntityManagerFactoryProvider.class);
 
-        Multibinder<Statement> statements = Multibinder.newSetBinder(binder(), Statement.class);
-        statements.addBinding().to(CloseDatabaseStatement.class);
+        Multibinder<BeforeAndAfterTask> tasks = Multibinder.newSetBinder(binder(), BeforeAndAfterTask.class);
+        tasks.addBinding().to(CloseDatabaseTask.class);
     }
 
-    private static class CloseDatabaseStatement extends Statement {
+    private static class CloseDatabaseTask implements BeforeAndAfterTask {
 
         @Inject
         private Provider<EntityManagerFactory> entityManagerFactoryProvider;
 
         @Override
-        public void evaluate() throws Throwable {
+        public void before() {
+            // do nothing
+        }
+
+        @Override
+        public void after() {
             entityManagerFactoryProvider.get().close();
         }
     }
