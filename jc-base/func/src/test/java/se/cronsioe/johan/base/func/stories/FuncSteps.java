@@ -35,7 +35,7 @@ public class FuncSteps {
     @When("^I filter integers greater than (\\d+)$")
     public void i_filter_integers_greater_than(final int tooLow) throws Throwable {
 
-        integers = Filterer.from(integers).using(new Predicate<Integer>() {
+        integers = Filterer.filter(integers).using(new Predicate<Integer>() {
             @Override
             public boolean test(Integer value) {
                 return value > tooLow;
@@ -46,17 +46,14 @@ public class FuncSteps {
     @When("^I reduce$")
     public void i_reduce() throws Throwable {
 
-        result = Reducer.from(0).using(Mapper.map(integers).using(new Function1<Function1<Integer, Integer>, Integer>() {
-            @Override
-            public Function1<Integer, Integer> apply(final Integer value) {
-                return new Function1<Integer, Integer>() {
+        result = Reducer.reduce(0, integers).using(
+
+                new Function2<Integer, Integer, Integer>() {
                     @Override
-                    public Integer apply(Integer sum) {
-                        return sum + value;
+                    public Integer apply(Integer current, Integer value) {
+                        return current + value;
                     }
-                };
-            }
-        }));
+                });
     }
 
     @Then("^the result is (\\d+)$")

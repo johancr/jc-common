@@ -13,49 +13,47 @@ public class ReducerTest {
 
     @Test
     public void reduceEmpty() {
-        Collection<Function1<Integer, Integer>> empty = Collections.emptyList();
+        Collection<Integer> empty = Collections.emptyList();
 
-        int result = Reducer.from(0).using(empty);
+        int result = Reducer.reduce(0, empty).using(sumsAndAddsTen());
 
         assertThat(result, is(0));
     }
 
-    @Test
-    public void reduceOneFunction() {
-        int result = Reducer.from(1).using(Arrays.asList(addsTen()));
-
-        assertThat(result, is(11));
-    }
-
-    private Function1<Integer, Integer> addsTen() {
-        return new Function1<Integer, Integer>() {
+    private Function2<Integer, Integer, Integer> sumsAndAddsTen() {
+        return new Function2<Integer, Integer, Integer>() {
             @Override
-            public Integer apply(Integer value) {
-                return value + 10;
+            public Integer apply(Integer current, Integer value) {
+                return current + value + 10;
             }
         };
     }
 
     @Test
+    public void reduceOneFunction() {
+        int result = Reducer.reduce(1, Arrays.asList(0)).using(sumsAndAddsTen());
+
+        assertThat(result, is(11));
+    }
+
+    @Test
     public void reduceMultiple() {
-        Collection<Function1<Integer, Integer>> functions = Arrays.asList(addsTen(), addsTen());
+        int result = Reducer.reduce(1, Arrays.asList(2, 3)).using(sumsAndAddsTen());
 
-        int result = Reducer.from(1).using(functions);
-
-        assertThat(result, is(21));
+        assertThat(result, is(26));
     }
 
     @Test
     public void reduceString() {
-        String result = Reducer.from("hello ").using(Arrays.asList(addsWorld()));
+        String result = Reducer.reduce("", Arrays.asList("hello ")).using(addsWorld());
 
         assertThat(result, is("hello world"));
     }
 
-    private Function1<String, String> addsWorld() {
-        return new Function1<String, String>() {
+    private Function2<String, String, String> addsWorld() {
+        return new Function2<String, String, String>() {
             @Override
-            public String apply(String value) {
+            public String apply(String current, String value) {
                 return value + "world";
             }
         };

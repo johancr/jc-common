@@ -2,24 +2,26 @@ package se.cronsioe.johan.base.func;
 
 import java.util.Collection;
 
-public class Reducer<R> {
+public class Reducer<T> {
 
-    private final R initialValue;
+    private final T initialValue;
+    private Collection<T> items;
 
-    private Reducer(R initialValue) {
+    private Reducer(T initialValue, Collection<T> items) {
         this.initialValue = initialValue;
+        this.items = items;
     }
 
-    public static <R> Reducer<R> from(R initialValue) {
-        return new Reducer<R>(initialValue);
+    public static <R> Reducer<R> reduce(R initialValue, Collection<R> items) {
+        return new Reducer<R>(initialValue, items);
     }
 
-    public R using(Collection<Function1<R, R>> functions) {
-        R result = initialValue;
-        for (Function1<R, R> function : functions)
+    public T using(Function2<T, T, T> function) {
+        T current = initialValue;
+        for (T item : items)
         {
-            result = function.apply(result);
+            current = function.apply(current, item);
         }
-        return result;
+        return current;
     }
 }

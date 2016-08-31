@@ -11,7 +11,7 @@ public class Filterer<T> {
         this.items = items;
     }
 
-    public static <T> Filterer<T> from(Collection<T> items) {
+    public static <T> Filterer<T> filter(Collection<T> items) {
         return new Filterer<T>(items);
     }
 

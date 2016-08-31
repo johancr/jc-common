@@ -13,14 +13,14 @@ public class FiltererTest {
 
     @Test
     public void filterNothing() {
-        Collection<Object> result = Filterer.from(Collections.emptyList()).using(null);
+        Collection<Object> result = Filterer.filter(Collections.emptyList()).using(null);
 
         assertThat(result.isEmpty(), is(true));
     }
 
     @Test
     public void filterOneOutOfTwo() {
-        Collection<Integer> result = Filterer.from(Arrays.asList(1, 2)).using(even());
+        Collection<Integer> result = Filterer.filter(Arrays.asList(1, 2)).using(even());
 
         assertThat(result.iterator().next(), is(2));
     }
