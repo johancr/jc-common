@@ -29,4 +29,8 @@ public class Chainer<T> {
     public <R> Chainer<R> flatMap(Function1<Collection<R>, T> function) {
         return chain(FlatMapper.flatMap(items).using(function));
     }
+
+    public Collection<T> toCollection() {
+        return items;
+    }
 }
