@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.junit.runners.model.InitializationError;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
-import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.junit.GuiceModules;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 

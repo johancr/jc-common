@@ -7,8 +7,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
-import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.junit.GuiceModules;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 

@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import se.cronsioe.johan.base.transaction.Transaction;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
-import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.junit.GuiceModules;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 
@@ -15,11 +15,8 @@ import javax.inject.Provider;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertSame;
 
 @RunWith(GuiceRunner.class)
 @GuiceModules(JPATestModule.class)
@@ -92,8 +89,7 @@ public class EntityManagerProviderTest {
 
     @Test
     @Transactional
-    public void doNotReturnNullIfEntityManagerAlreadyBoundToTransaction()
-    {
+    public void doNotReturnNullIfEntityManagerAlreadyBoundToTransaction() {
         EntityManager entityManager = entityManagerFactoryProvider.get().createEntityManager();
         Transaction transaction = transactionProvider.get();
         transaction.bind(EntityManager.class, entityManager);
