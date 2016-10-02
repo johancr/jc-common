@@ -41,6 +41,7 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/jars/cucumber-java-1.2.4.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/jars/mockito-all-1.9.5.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/jars/guice-multibindings-3.0.jar!/" />
         </CLASSES>
         <JAVADOC>
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/javadocs/guice-3.0-javadoc.jar!/" />
@@ -56,6 +57,7 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/javadocs/cucumber-java-1.2.4-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/javadocs/mockito-all-1.9.5-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/javadocs/geronimo-jta_1.1_spec-1.1.1-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/javadocs/guice-multibindings-3.0-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/sources/guice-3.0-sources.jar!/" />
@@ -74,8 +76,10 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/info.cukes/cucumber-java/sources/cucumber-java-1.2.4-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.mockito/mockito-all/sources/mockito-all-1.9.5-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/sources/geronimo-jta_1.1_spec-1.1.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject.extensions/guice-multibindings/sources/guice-multibindings-3.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="test-junit" />
   </component>
 </module>

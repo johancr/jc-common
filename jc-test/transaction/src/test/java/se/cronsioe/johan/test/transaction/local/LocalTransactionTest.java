@@ -1,12 +1,15 @@
 package se.cronsioe.johan.test.transaction.local;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+import com.google.inject.Inject;
+import com.google.inject.Provider;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
+import org.junit.runner.RunWith;
 import se.cronsioe.johan.base.transaction.Transaction;
+import se.cronsioe.johan.test.junit.GuiceModules;
+import se.cronsioe.johan.test.junit.GuiceRunner;
 import se.cronsioe.johan.test.transaction.annotation.Transactional;
 import se.cronsioe.johan.test.transaction.guice.LocalTransactionModule;
 import se.cronsioe.johan.test.transaction.junit.TransactionRule;
@@ -21,21 +24,24 @@ public class LocalTransactionTest {
         JUnitCore core = new JUnitCore();
 
         Result result = core.run(TestWithTransaction.class);
-        System.out.println(result.getFailures());
         assertThat("all tests passed", result.getFailureCount(), is(0));
     }
 
+    @RunWith(GuiceRunner.class)
+    @GuiceModules(LocalTransactionModule.class)
     public static class TestWithTransaction {
 
-        private Injector injector = Guice.createInjector(new LocalTransactionModule());
-
         @Rule
-        public TransactionRule transactionRule = injector.getInstance(TransactionRule.class);
+        @Inject
+        public TransactionRule transactionRule;
+
+        @Inject
+        private Provider<Transaction> transactionProvider;
 
         @Transactional
         @Test
         public void testTransactional() {
-            Transaction transaction = injector.getInstance(Transaction.class);
+            Transaction transaction = transactionProvider.get();
 
             assertThat(transaction.isActive(), is(true));
         }
