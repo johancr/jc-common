@@ -2,7 +2,7 @@ package se.cronsioe.johan.test.lang;
 
 public abstract class Resource {
 
-    public static ResourceBuilder named(final String name) {
+    public static ResourceBuilder named(String name) {
         return new ResourceBuilder().withName(name);
     }
 

@@ -2,7 +2,7 @@ package se.cronsioe.johan.test.lang;
 
 public class MockClassLoaderExecutor {
 
-    public void execute(final MockClassLoaderTask task) {
+    public void execute(MockClassLoaderTask task) {
 
         MockClassLoader mockClassLoader = createMockClassLoader(task);
 

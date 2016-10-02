@@ -29,7 +29,7 @@ public class MockClassLoader extends ClassLoader {
     public Enumeration<URL> getResources(String name) throws IOException {
         Collection<URL> result = new ArrayList<URL>();
 
-        for (final Resource resource : resources)
+        for (Resource resource : resources)
         {
             String path = resourcePathResolver.resolve(resource);
             if (path.equals(name))
@@ -51,7 +51,8 @@ public class MockClassLoader extends ClassLoader {
 
     @Override
     public URL getResource(String name) {
-        for (final Resource resource : resources)
+
+        for (Resource resource : resources)
         {
             String path = resourcePathResolver.resolve(resource);
             if (path.equals(name))
