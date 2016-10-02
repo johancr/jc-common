@@ -8,6 +8,8 @@
     </configurations>
 
     <dependencies>
+        <dependency org="se.cronsioe.johan" name="jc-test-junit" changing="true" rev="1.0.0" conf="test->compile"/>
+
         <dependency org="junit" name="junit" rev="4.12" conf="test->*"/>
     </dependencies>
 
