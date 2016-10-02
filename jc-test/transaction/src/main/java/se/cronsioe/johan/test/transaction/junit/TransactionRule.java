@@ -23,19 +23,22 @@ public class TransactionRule implements TestRule {
             @Override
             public void evaluate() throws Throwable {
 
-                if (description.getAnnotation(Transactional.class) != null)
+                boolean shouldRunInTransaction = description.getAnnotation(Transactional.class) != null;
+
+                if (shouldRunInTransaction)
                 {
                     localTransactionManager.begin();
-                }
 
-                base.evaluate();
+                    base.evaluate();
 
-                if (description.getAnnotation(Transactional.class) != null)
-                {
                     if (localTransactionManager.getTransaction().isActive())
                     {
                         localTransactionManager.commit();
                     }
+                }
+                else
+                {
+                    base.evaluate();
                 }
             }
         };
