@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ivy-module version="2.0">
+    <info organisation="se.cronsioe.johan" module="jc-base-core" revision="1.0.0"/>
+
+    <configurations>
+        <conf name="compile"/>
+        <conf name="test"/>
+    </configurations>
+
+    <dependencies>
+        <dependency org="se.cronsioe.johan" name="jc-test-core" changing="true" rev="1.0.0"
+                    conf="test->compile"/>
+
+        <dependency org="junit" name="junit" rev="4.12" conf="test->*"/>
+    </dependencies>
+
+</ivy-module>
