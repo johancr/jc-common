@@ -10,12 +10,12 @@ Then a transaction is provided
 
 Scenario: Get current transaction
 Given a transaction scope with a started transaction
-When get transaction
+When I get a transaction
 Then the transaction is gotten
 
 Scenario: Get transaction that does not exist
 Given a transaction scope
-When get transaction
+When I get a transaction
 Then an exception is thrown
 
 Scenario: Begin transaction when one already exists

@@ -69,8 +69,8 @@ public class TxScopeSteps
         a_transaction_is_provided();
     }
 
-    @When("^get transaction$")
-    public void get_transaction()
+    @When("^I get a transaction$")
+    public void i_get_a_transaction()
     {
         try
         {
