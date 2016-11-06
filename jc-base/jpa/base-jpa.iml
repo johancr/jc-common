@@ -30,8 +30,6 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/jars/cglib-2.2.1-v20090111.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.1.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/jars/junit-4.12.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/jars/javax.persistence-2.1.1.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar!/" />
         </CLASSES>
@@ -39,8 +37,6 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/javadocs/guice-3.0-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/javax.inject/javax.inject/javadocs/javax.inject-1-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/javadocs/cglib-2.2.1-v20090111-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/javadocs/junit-4.12-javadoc.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/javadocs/hamcrest-core-1.3-javadoc.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/javadocs/geronimo-jta_1.1_spec-1.1.1-javadoc.jar!/" />
         </JAVADOC>
         <SOURCES>
@@ -49,8 +45,6 @@
           <root url="jar://$USER_HOME$/.ivy2/cache/aopalliance/aopalliance/sources/aopalliance-1.0-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/sources/cglib-2.2.1-v20090111-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/sources/asm-3.1-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/junit/junit/sources/junit-4.12-sources.jar!/" />
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.hamcrest/hamcrest-core/sources/hamcrest-core-1.3-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/sources/javax.persistence-2.1.1-sources.jar!/" />
           <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/sources/geronimo-jta_1.1_spec-1.1.1-sources.jar!/" />
         </SOURCES>
