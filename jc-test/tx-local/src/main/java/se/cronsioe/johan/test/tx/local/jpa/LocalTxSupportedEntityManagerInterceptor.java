@@ -15,6 +15,11 @@ public class LocalTxSupportedEntityManagerInterceptor extends AbstractTxSupporte
     }
 
     @Override
+    protected boolean hasExpired(EntityManager entityManager) {
+        return entityManager == null || !entityManager.isOpen();
+    }
+
+    @Override
     protected void postCreate(final EntityManager entityManager, Tx tx) {
         entityManager.getTransaction().begin();
 

@@ -15,3 +15,10 @@ Given a transaction
 When I request a session
 And I request another session
 Then I get the same session
+
+Scenario: Create new session if session is closed
+Given a transaction
+When I request a session
+And I close the session
+And I request another session
+Then I get a new session

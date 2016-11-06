@@ -64,4 +64,14 @@ public class FooSteps {
     public void i_get_the_same_session() {
         assertThat("same session", anotherSession, is(sameInstance(session)));
     }
+
+    @When("^I close the session$")
+    public void i_close_the_session() {
+        session.close();
+    }
+
+    @Then("^I get a new session$")
+    public void i_get_a_new_session() {
+        assertThat("new session", anotherSession, is(not(sameInstance(session))));
+    }
 }
