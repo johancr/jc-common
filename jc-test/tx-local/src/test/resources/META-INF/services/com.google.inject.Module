@@ -1,0 +1,4 @@
+se.cronsioe.johan.test.tx.local.LocalTxModule
+se.cronsioe.johan.test.tx.foo.FooModule
+se.cronsioe.johan.test.tx.jpa.JPAModule
+se.cronsioe.johan.test.tx.local.jpa.LocalTxSupportedJPAModule

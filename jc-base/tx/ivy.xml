@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ivy-module version="2.0">
+    <info organisation="se.cronsioe.johan" module="jc-base-tx" revision="1.0.0"/>
+
+    <configurations>
+        <conf name="compile"/>
+        <conf name="test"/>
+    </configurations>
+
+    <dependencies>
+        <dependency org="com.google.inject" name="guice" rev="3.0" conf="compile->*"/>
+        <dependency org="org.apache.geronimo.specs" name="geronimo-jta_1.1_spec" rev="1.1.1" conf="compile->*"/>
+        <dependency org="org.eclipse.persistence" name="javax.persistence" rev="2.1.1" conf="compile->*"/>
+    </dependencies>
+
+</ivy-module>

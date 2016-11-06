@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ivy-module version="2.0">
+    <info organisation="se.cronsioe.johan" module="jc-test-tx-local" revision="1.0.0"/>
+
+    <configurations>
+        <conf name="compile"/>
+        <conf name="test"/>
+    </configurations>
+
+    <dependencies>
+        <dependency org="se.cronsioe.johan" name="jc-base-tx" changing="true" rev="1.0.0"
+                    conf="compile,test->compile"/>
+
+        <dependency org="com.google.inject" name="guice" rev="3.0" conf="compile->*"/>
+        <dependency org="org.eclipse.persistence" name="javax.persistence" rev="2.1.1" conf="compile->*"/>
+
+        <dependency org="com.h2database" name="h2" rev="1.4.191" conf="test->*"/>
+        <dependency org="org.eclipse.persistence" name="org.eclipse.persistence.jpa" rev="2.5.2" conf="test->*"/>
+        <dependency org="info.cukes" name="cucumber-junit" rev="1.2.4" conf="test->*"/>
+        <dependency org="info.cukes" name="cucumber-java" rev="1.2.4" conf="test->*"/>
+        <dependency org="info.cukes" name="cucumber-guice" rev="1.2.4" conf="test->*"/>
+        <dependency org="junit" name="junit" rev="4.12" conf="test->*"/>
+    </dependencies>
+
+</ivy-module>

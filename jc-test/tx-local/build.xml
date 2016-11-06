@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<project name="jc-test-tx-local">
+
+    <import file="../../common.xml"/>
+
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="IvyIDEA" name="IvyIDEA">
+      <configuration ivyFile="$MODULE_DIR$/ivy.xml" useProjectSettings="true" useCustomIvySettings="true" ivySettingsFile="" onlyResolveSelectedConfigs="false">
+        <propertiesSettings>
+          <propertiesFiles includeProjectLevelPropertiesFiles="true" />
+        </propertiesSettings>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="IvyIDEA">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/jars/guice-3.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/jars/cglib-2.2.1-v20090111.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/jars/javax.persistence-2.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/javadocs/guice-3.0-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/javax.inject/javax.inject/javadocs/javax.inject-1-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/javadocs/cglib-2.2.1-v20090111-javadoc.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/javadocs/geronimo-jta_1.1_spec-1.1.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/com.google.inject/guice/sources/guice-3.0-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/javax.inject/javax.inject/sources/javax.inject-1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/aopalliance/aopalliance/sources/aopalliance-1.0-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.sonatype.sisu.inject/cglib/sources/cglib-2.2.1-v20090111-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/sources/asm-3.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/sources/geronimo-jta_1.1_spec-1.1.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.persistence/javax.persistence/sources/javax.persistence-2.1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
