@@ -30,7 +30,7 @@
         </ivy:publish>
     </target>
 
-    <target name="test-compile" depends="package, resolve-test">
+    <target name="test-compile" depends="package, resolve-test" unless="junit.disable">
         <javac 
             source="1.6"
             target="1.6"
@@ -47,7 +47,7 @@
         </javac>
     </target>
 
-    <target name="test" depends="test-compile">
+    <target name="test" depends="test-compile" unless="junit.disable">
         <junit
             fork="yes"
             forkMode="perBatch"
@@ -77,7 +77,7 @@
         <ivy:cachepath pathid="compile.path" conf="compile"/>
     </target>
 
-    <target name="resolve-test">
+    <target name="resolve-test" unless="junit.disable">
         <ivy:cachepath pathid="test.path" conf="test"/>
     </target>
 

@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <project name="jc-base-jpa">
 
+    <property name="junit.disable" value="true"/>
+
     <import file="../../common.xml"/>
 
 </project>

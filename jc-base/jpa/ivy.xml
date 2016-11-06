@@ -13,8 +13,6 @@
 
         <dependency org="com.google.inject" name="guice" rev="3.0" conf="compile->*"/>
         <dependency org="org.eclipse.persistence" name="javax.persistence" rev="2.1.1" conf="compile->*"/>
-
-        <dependency org="junit" name="junit" rev="4.12" conf="test->*"/>
     </dependencies>
 
 </ivy-module>
