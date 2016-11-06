@@ -37,7 +37,7 @@ public class JTATransactionProvider implements Provider<Transaction> {
             return new Transaction() {
 
                 @Override
-                public void add(final TransactionListener listener) {
+                public void add(TransactionListener listener) {
                     try
                     {
                         transaction.enlistResource(asXAResource(listener));
