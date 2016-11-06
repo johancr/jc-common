@@ -16,7 +16,7 @@ Then the transaction is gotten
 Scenario: Get transaction that does not exist
 Given a transaction scope
 When get transaction
-Then an exception is trown
+Then an exception is thrown
 
 Scenario: Begin transaction when one already exists
 Given a transaction scope with a started transaction

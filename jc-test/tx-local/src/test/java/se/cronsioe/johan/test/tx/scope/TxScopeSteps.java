@@ -88,7 +88,7 @@ public class TxScopeSteps
         assertThat("transaction", currentTx, is(sameInstance(begunTx)));
     }
 
-    @Then("^an exception is trown$")
+    @Then("^an exception is thrown$")
     public void an_exception_is_thrown()
     {
         assertThat("thrown exception", exception, is(instanceOf(TxException.class)));
