@@ -2,10 +2,11 @@ package se.cronsioe.johan.test.tx.jpa;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.java.guice.ScenarioScoped;
+import se.cronsioe.johan.base.bootstrap.Bootstrap;
 import se.cronsioe.johan.base.tx.Tx;
 import se.cronsioe.johan.base.tx.TxScope;
 
@@ -15,7 +16,6 @@ import javax.persistence.EntityManagerFactory;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
-@ScenarioScoped
 public class JPASteps {
 
     @Inject
@@ -31,6 +31,11 @@ public class JPASteps {
     private EntityManager session;
     private EntityManager anotherSession;
     private FooEO entity;
+
+    @Before
+    public void setUp() {
+        Bootstrap.inject(this);
+    }
 
     @Given("^a transaction$")
     public void a_transaction() {

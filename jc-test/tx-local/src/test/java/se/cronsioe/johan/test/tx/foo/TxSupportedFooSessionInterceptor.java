@@ -13,11 +13,6 @@ public class TxSupportedFooSessionInterceptor extends AbstractTxSupportedInterce
     }
 
     @Override
-    protected boolean hasExpired(FooSession session) {
-        return session == null || session.isClosed();
-    }
-
-    @Override
     protected void postCreate(final FooSession session, Tx tx) {
         tx.add(new AbstractTxListener() {
             @Override

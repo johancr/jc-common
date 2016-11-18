@@ -2,17 +2,17 @@ package se.cronsioe.johan.test.tx.foo;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.runtime.java.guice.ScenarioScoped;
+import se.cronsioe.johan.base.bootstrap.Bootstrap;
 import se.cronsioe.johan.base.tx.Tx;
 import se.cronsioe.johan.base.tx.TxScope;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
-@ScenarioScoped
 public class FooSteps {
 
     @Inject
@@ -23,6 +23,11 @@ public class FooSteps {
 
     private FooSession session;
     private FooSession anotherSession;
+
+    @Before
+    public void setUp() {
+        Bootstrap.inject(this);
+    }
 
     @Given("^a transaction$")
     public void a_transaction() {
@@ -63,15 +68,5 @@ public class FooSteps {
     @Then("^I get the same session$")
     public void i_get_the_same_session() {
         assertThat("same session", anotherSession, is(sameInstance(session)));
-    }
-
-    @When("^I close the session$")
-    public void i_close_the_session() {
-        session.close();
-    }
-
-    @Then("^I get a new session$")
-    public void i_get_a_new_session() {
-        assertThat("new session", anotherSession, is(not(sameInstance(session))));
     }
 }
