@@ -21,7 +21,7 @@
         <jar destfile=".build/${module.name}.jar" basedir="src/main/java/.classes"/>
     </target>
 
-    <target name="publish" depends="package, test">
+    <target name="install" depends="package, test">
         <ivy:publish
             resolver="local"
             overwrite="true">
