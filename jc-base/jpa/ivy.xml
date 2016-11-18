@@ -8,9 +8,6 @@
     </configurations>
 
     <dependencies>
-        <dependency org="se.cronsioe.johan" name="jc-base-transaction" changing="true" rev="1.0.0"
-                    conf="compile->compile"/>
-
         <dependency org="com.google.inject" name="guice" rev="3.0" conf="compile->*"/>
         <dependency org="org.eclipse.persistence" name="javax.persistence" rev="2.1.1" conf="compile->*"/>
     </dependencies>
