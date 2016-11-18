@@ -13,15 +13,4 @@
             <property name="persistence.unit.name" value="test"/>
         </properties>
     </persistence-unit>
-
-    <persistence-unit name="uniform" transaction-type="JTA">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-
-        <class>se.cronsioe.johan.test.jpa.FooEO</class>
-
-        <properties>
-            <property name="eclipselink.logging.level" value="SEVERE"/>
-            <property name="eclipselink.ddl-generation" value="create-tables"/>
-        </properties>
-    </persistence-unit>
 </persistence>

@@ -3,7 +3,6 @@ package se.cronsioe.johan.test.jpa;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import org.junit.FixMethodOrder;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -13,8 +12,6 @@ import org.junit.runners.model.InitializationError;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
 import se.cronsioe.johan.test.junit.GuiceModules;
 import se.cronsioe.johan.test.junit.GuiceRunner;
-import se.cronsioe.johan.test.transaction.annotation.Transactional;
-import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 
 import javax.persistence.EntityManager;
 
@@ -39,17 +36,12 @@ public class JPATestModuleTest {
     public static class JPATest {
 
         @Inject
-        @Rule
-        public TransactionRule transactionRule;
-
-        @Inject
         private Provider<EntityManager> entityManagerProvider;
 
         @Inject
         private JPAExecutor executor;
 
         @Test
-        @Transactional
         public void a() {
             executor.execute(new JPATask<Void>() {
                 @Override
@@ -69,7 +61,6 @@ public class JPATestModuleTest {
         }
 
         @Test
-        @Transactional
         public void b() {
             executor.execute(new JPATask<Void>() {
                 @Override

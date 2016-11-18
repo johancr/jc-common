@@ -3,14 +3,11 @@ package se.cronsioe.johan.test.jpa;
 import com.google.inject.ImplementedBy;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
 import se.cronsioe.johan.test.junit.GuiceModules;
 import se.cronsioe.johan.test.junit.GuiceRunner;
-import se.cronsioe.johan.test.transaction.annotation.Transactional;
-import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 
 import javax.persistence.EntityManager;
 
@@ -22,10 +19,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class JPATestUtilsTest {
 
     @Inject
-    @Rule
-    public TransactionRule transactionRule;
-
-    @Inject
     private FooDAO fooDAO;
 
     @Inject
@@ -35,7 +28,6 @@ public class JPATestUtilsTest {
     private JPAExecutor executor;
 
     @Test
-    @Transactional
     public void createsTransactionalProxy() {
         fooDAO = JPATestUtils.makeTransactional(fooDAO, entityManagerProvider);
 
@@ -45,7 +37,6 @@ public class JPATestUtilsTest {
     }
 
     @Test
-    @Transactional
     public void joinOngoingTransaction() {
         fooDAO = JPATestUtils.makeTransactional(fooDAO, entityManagerProvider);
 

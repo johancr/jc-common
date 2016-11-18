@@ -2,18 +2,14 @@ package se.cronsioe.johan.test.jpa;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import se.cronsioe.johan.base.transaction.Transaction;
 import se.cronsioe.johan.test.jpa.guice.JPATestModule;
 import se.cronsioe.johan.test.jpa.impl.EntityManagerFactoryProvider;
 import se.cronsioe.johan.test.jpa.impl.PersistenceUnitPropertiesProvider;
 import se.cronsioe.johan.test.jpa.impl.PersistenceUnitProvider;
 import se.cronsioe.johan.test.junit.GuiceModules;
 import se.cronsioe.johan.test.junit.GuiceRunner;
-import se.cronsioe.johan.test.transaction.annotation.Transactional;
-import se.cronsioe.johan.test.transaction.junit.TransactionRule;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -26,13 +22,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(GuiceRunner.class)
 @GuiceModules(JPATestModule.class)
 public class EntityManagerFactoryProviderTest {
-
-    @Rule
-    @Inject
-    public TransactionRule transactionRule;
-
-    @Inject
-    private Provider<Transaction> transactionProvider;
 
     @Inject
     private Provider<EntityManagerFactory> entityManagerFactoryProvider;
@@ -67,7 +56,6 @@ public class EntityManagerFactoryProviderTest {
     }
 
     @Test
-    @Transactional
     public void newFactoryRunsDdlGeneration() {
         EntityManagerFactory entityManagerFactory = entityManagerFactoryProvider.get();
 

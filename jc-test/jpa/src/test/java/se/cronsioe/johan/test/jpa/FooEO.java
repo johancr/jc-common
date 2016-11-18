@@ -7,7 +7,8 @@ import javax.persistence.Id;
 @Entity
 public class FooEO extends Foo {
 
-    public static FooEO toEO(Foo foo) {
+    public static FooEO toEO(Foo foo)
+    {
         return new FooEO();
     }
 
