@@ -1,5 +1,12 @@
 package se.cronsioe.johan.base.tx.jta;
 
+import com.google.inject.Inject;
+import com.google.inject.Provider;
+import se.cronsioe.johan.base.tx.Tx;
+import se.cronsioe.johan.base.tx.TxException;
+import se.cronsioe.johan.base.tx.TxListener;
+import se.cronsioe.johan.base.tx.TxScope;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.transaction.Transaction;
@@ -8,13 +15,6 @@ import javax.transaction.TransactionSynchronizationRegistry;
 import javax.transaction.xa.XAException;
 import javax.transaction.xa.XAResource;
 import javax.transaction.xa.Xid;
-
-import com.google.inject.Inject;
-import com.google.inject.Provider;
-import se.cronsioe.johan.base.tx.Tx;
-import se.cronsioe.johan.base.tx.TxException;
-import se.cronsioe.johan.base.tx.TxListener;
-import se.cronsioe.johan.base.tx.TxScope;
 
 public class JTATxScope implements TxScope
 {
@@ -59,7 +59,7 @@ public class JTATxScope implements TxScope
                 @Override
                 public <T> void bind(Class<T> key, T resource)
                 {
-                    registry.putResource(resource, key);
+                    registry.putResource(key, resource);
                 }
 
                 @Override
@@ -79,14 +79,14 @@ public class JTATxScope implements TxScope
     private TransactionManager getTransactionManager() throws NamingException
     {
         InitialContext context = initialContextProvider.get();
-        return (TransactionManager) context.lookup("javax.transaction.TransactionManager");
+        return (TransactionManager) context.lookup("java:comp/TransactionManager");
     }
 
     private TransactionSynchronizationRegistry getRegistry() throws NamingException
     {
         InitialContext context = initialContextProvider.get();
         return (TransactionSynchronizationRegistry) context
-            .lookup("javax.transaction.TransactionSynchronizationRegistry");
+            .lookup("java:comp/TransactionSynchronizationRegistry");
     }
 
     private XAResource createXAResource(final TxListener listener)
@@ -166,7 +166,7 @@ public class JTATxScope implements TxScope
                 }
                 catch (Exception ex)
                 {
-                    return null;
+                    throw new IllegalStateException("Could not create context: " + ex, ex);
                 }
             }
         };

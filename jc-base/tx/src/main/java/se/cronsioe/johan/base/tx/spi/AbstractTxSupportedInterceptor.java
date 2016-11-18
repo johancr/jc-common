@@ -17,7 +17,7 @@ public abstract class AbstractTxSupportedInterceptor<T> implements MethodInterce
         Tx tx = tx();
         T resource = tx.lookup(resourceClass());
 
-        if (hasExpired(resource))
+        if (resource == null)
         {
             resource = (T) invocation.proceed();
             postCreate(resource, tx);
@@ -32,10 +32,6 @@ public abstract class AbstractTxSupportedInterceptor<T> implements MethodInterce
     }
 
     protected abstract Class<T> resourceClass();
-
-    protected boolean hasExpired(T resource) {
-        return resource == null;
-    }
 
     protected void postCreate(T resource, Tx tx) {
     }
