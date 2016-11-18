@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<project name="jc-test-transaction">
-
-    <import file="../../common.xml"/>
-
-</project>
