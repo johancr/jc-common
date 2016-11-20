@@ -77,13 +77,27 @@ public class LocalTxScope implements TxScope {
 
     @Override
     public void commit() {
-        doGet().commit();
+        try
+        {
+            doGet().commit();
+        }
+        catch (Throwable ex)
+        {
+            // do nothing
+        }
         end();
     }
 
     @Override
     public void rollback() {
-        doGet().rollback();
+        try
+        {
+            doGet().rollback();
+        }
+        catch (Throwable ex)
+        {
+            // do nothing
+        }
         end();
     }
 

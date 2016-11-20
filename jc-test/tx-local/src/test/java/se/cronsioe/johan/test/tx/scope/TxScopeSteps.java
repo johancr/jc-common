@@ -34,7 +34,7 @@ public class TxScopeSteps {
         {
             txScope.rollback();
         }
-        catch (TxException ex)
+        catch (Exception ex)
         {
             // do nothing
         }
