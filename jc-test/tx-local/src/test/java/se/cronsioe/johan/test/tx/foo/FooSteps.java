@@ -58,6 +58,11 @@ public class FooSteps {
         assertThat("session is closed", session.isClosed(), is(true));
     }
 
+    @When("^I close the session$")
+    public void i_close_the_session() throws Throwable {
+        session.close();
+    }
+
     @When("^I request another session$")
     public void i_request_another_session() {
         anotherSession = sessionProvider.get();

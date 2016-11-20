@@ -35,4 +35,9 @@ public class LocalTxSupportedEntityManagerInterceptor extends AbstractTxSupporte
             }
         });
     }
+
+    @Override
+    protected boolean hasExpired(EntityManager entityManager) {
+        return !entityManager.isOpen();
+    }
 }

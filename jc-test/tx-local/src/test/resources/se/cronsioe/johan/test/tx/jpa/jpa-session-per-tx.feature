@@ -1,4 +1,4 @@
-Feature: Transaction suppoert for JPA sessions
+Feature: Transaction support for JPA sessions
   As a developer
   I want a JPA session per transaction
   So that the state is consistent withing a transaction
@@ -26,3 +26,10 @@ And I persist an object in the session
 And transaction is rolled back
 Then the session is closed
 And the object is not persisted in database
+
+Scenario: New entity manager provided if closed
+Given a transaction
+When I request a session
+And I close the session
+And I request a session
+Then the session is open

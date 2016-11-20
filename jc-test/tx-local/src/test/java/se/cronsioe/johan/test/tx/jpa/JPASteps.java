@@ -78,6 +78,11 @@ public class JPASteps {
         assertThat("another ession", anotherSession, is(not(nullValue())));
     }
 
+    @When("^I close the session$")
+    public void i_close_the_session() throws Throwable {
+        session.close();
+    }
+
     @Then("^I get the same session$")
     public void i_get_the_same_session() {
         assertThat("same session", anotherSession, is(sameInstance(session)));
