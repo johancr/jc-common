@@ -20,7 +20,7 @@ public class JPATestModule extends AbstractModule {
         bind(EntityManager.class).toProvider(EntityManagerProvider.class);
         bind(EntityManagerFactory.class).toProvider(EntityManagerFactoryProvider.class);
 
-        MethodInterceptor interceptor = new ThreadBoundEntityManagerInterceptor();
+        MethodInterceptor interceptor = new CachingEntityManagerInterceptor();
         requestInjection(interceptor);
         bindInterceptor(Matchers.subclassesOf(Provider.class),
                 Matchers.returns(Matchers.subclassesOf(EntityManager.class)),
