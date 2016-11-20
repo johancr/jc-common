@@ -12,7 +12,6 @@ import se.cronsioe.johan.test.junit.BeforeAndAfterTask;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import java.util.regex.Matcher;
 
 public class JPATestModule extends AbstractModule {
 
